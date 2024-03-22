@@ -80,6 +80,7 @@ h3:not(.post-title) {
    /* the posts section doesn't need to have the top padding */
    .main-inner {
       padding-top: 0;
+   }
 
    /* The header logo should be smaller */
    header img {

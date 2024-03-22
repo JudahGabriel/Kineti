@@ -4,14 +4,18 @@
 
 .post-footer {
    font-size: 16px;
-}.post-footer-line {
+}
+
+.post-footer-line {
    line-height: 12px;
-}.post-body a {
+}
+
+.post-body a {
    text-shadow: 1px 1px 2px silver;
 }
 
 h3:not(.post-title) {
-   font-family: &#39;Yanone Kaffeesatz&#39;;
+   font-family: "Yanone Kaffeesatz";
    font-size: 30px;
    font-weight: 300;
    font-style: normal;
@@ -39,7 +43,7 @@ h3:not(.post-title) {
    padding: 10px;
 }
 
-#recommendedReadingContent li &gt; :first-child {
+#recommendedReadingContent li > :first-child {
    font-size: 1.3em;
    text-shadow: 1px 1px 2px silver;
 }

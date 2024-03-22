@@ -70,10 +70,11 @@ h3:not(.post-title) {
       max-width: 100%;
    }
 
-   /* Post titles should be justified and a bit smaller */
+   /* Post titles should be justified and a bit smaller with less top margin */
    h3.post-title {
       text-align: justify;
       font-size: 4em;
+      margin-top: 10px;
    }
 
    /* the posts section doesn't need to have the top padding */

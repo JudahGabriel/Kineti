@@ -48,13 +48,20 @@ h3:not(.post-title) {
    text-shadow: 1px 1px 2px silver;
 }
 
-/* On mobile, hide the sidebar and make the posts column have no padding. */
+/* On mobile we hide the sidebar and make some adjustments. */
 @media (max-width: 768px) {
+    /* hide the sidebar */
     .column-left-outer {
         display: none;
     }
 
+   /* Remove all padding from the posts column */
     .columns.fauxcolumns {
         padding-left: 0;
     }
+
+   /* Make the header, posts, and comments take up full viewport width (minus some for padding) */
+   header, .main-outer, .comments {
+      width: 82vw;
+   }
 }

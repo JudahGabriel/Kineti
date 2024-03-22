@@ -3,7 +3,7 @@ const addPopularPostLink = function() {
    const popularAndRecentPosts = document.querySelectorAll(".popular-posts li a");
    if (popularAndRecentPosts.length > 0) {
       const postFooters = Array.from(document.querySelectorAll(".post-footer"));
-      postFooters.forEach((index, footer) => {
+      postFooters.forEach(footer => {
          const randomPost = popularAndRecentPosts[Math.floor(Math.random()*popularAndRecentPosts.length)];
          const youMightAlsoLike = document.createElement("div"); 
          youMightAlsoLike.innerHTML = '<div class="you-might-like">Read this next: <a href="' + randomPost.href + '">' + randomPost.innerText + '</div>';

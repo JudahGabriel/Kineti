@@ -48,7 +48,7 @@ h3:not(.post-title) {
    text-shadow: 1px 1px 2px silver;
 }
 
-/* On mobile we hide the sidebar and make some adjustments. */
+/* Mobile styles */
 @media (max-width: 768px) {
     /* hide the sidebar */
     .column-left-outer {
@@ -68,5 +68,11 @@ h3:not(.post-title) {
    /* images should be maxed at 100% width */
    .post-body .entry-content img {
       max-width: 100%;
+   }
+
+   /* Post titles should be justified and a bit smaller */
+   .post-tile.entry-title {
+      text-align: justify;
+      font-size: 4em;
    }
 }

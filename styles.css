@@ -50,7 +50,7 @@ h3:not(.post-title) {
 
 /* On mobile, hide the sidebar and make the posts column have no padding. */
 @media (max-width: 576px) {
-    .column-left-inner aside {
+    .column-left-outer {
         display: none;
     }
 

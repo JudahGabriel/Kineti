@@ -64,4 +64,9 @@ h3:not(.post-title) {
    header, .main-outer, .comments {
       width: 82vw;
    }
+
+   /* images should be maxed at 100% width */
+   .post-body .entry-content img {
+      max-width: 100%;
+   }
 }

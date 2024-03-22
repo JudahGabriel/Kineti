@@ -1,0 +1,56 @@
+.profile-img {
+   float:right;
+}
+
+.post-footer {
+   font-size: 16px;
+}.post-footer-line {
+   line-height: 12px;
+}.post-body a {
+   text-shadow: 1px 1px 2px silver;
+}
+
+h3:not(.post-title) {
+   font-family: &#39;Yanone Kaffeesatz&#39;;
+   font-size: 30px;
+   font-weight: 300;
+   font-style: normal;
+   color: white;
+   padding: 20px 10px 20px 50px;
+   background-color: rgb(21, 84, 151);
+   text-rendering: optimizeLegibility;
+   margin-top: 1.5em;
+   margin-bottom: 1.5em;
+   border-left: 4px solid navy;
+   margin-left: -30px;
+   margin-right: -30px;
+}
+
+.post-body {
+   text-rendering: optimizeLegibility;
+}
+
+/* Recommended reading section */
+#recommendedReadingContent ul {
+   list-style: none;
+}
+
+#recommendedReadingContent h1 {
+   padding: 10px;
+}
+
+#recommendedReadingContent li &gt; :first-child {
+   font-size: 1.3em;
+   text-shadow: 1px 1px 2px silver;
+}
+
+/* On mobile, hide the sidebar and make the posts column have no padding. */
+@media (max-width: 576px) {
+    .column-left-inner aside {
+        display: none;
+    }
+
+    .columns.fauxcolumns {
+        padding-left: 0;
+    }
+}

@@ -66,12 +66,12 @@ h3:not(.post-title) {
    }
 
    /* images should be maxed at 100% width */
-   .post-body .entry-content img {
+   .post-body.entry-content img {
       max-width: 100%;
    }
 
    /* Post titles should be justified and a bit smaller */
-   .post-tile.entry-title {
+   .post-title.entry-title {
       text-align: justify;
       font-size: 4em;
    }

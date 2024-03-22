@@ -75,4 +75,18 @@ h3:not(.post-title) {
       text-align: justify;
       font-size: 4em;
    }
+
+   /* the posts section doesn't need to have the top padding */
+   .main-inner {
+      padding-top: 0;
+
+   /* The header logo should be smaller */
+   header img {
+      max-width: 10em;
+   }
+
+   /* The header text should be smaller too */
+   header h1 {
+      font-size: 3em;
+   }
 }

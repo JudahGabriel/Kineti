@@ -92,7 +92,7 @@ h3:not(.post-title) {
       font-size: 3em;
    }
 
-   iframe {
+   iframe, video {
       max-width: 100%;
    }
 }

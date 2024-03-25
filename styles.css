@@ -68,6 +68,7 @@ h3:not(.post-title) {
    /* images should be maxed at 100% width */
    .post-body img {
       max-width: 100%;
+      height: auto;
    }
 
    /* Post titles should be justified and a bit smaller with less top margin */

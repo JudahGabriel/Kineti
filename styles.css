@@ -1,3 +1,7 @@
+body {
+   --accent-color: rgb(21, 84, 151); /* The dark blue of our blog */
+}
+
 .profile-img {
    float:right;
 }
@@ -32,6 +36,13 @@ h3:not(.post-title) {
 
 .post-body {
    text-rendering: optimizeLegibility;
+}
+
+/* The first letter of the first paragraph in the post body should be styled specially */
+.post-body p:first-of-type::first-letter {
+   initial-letter: 2; /* take up 2 lines */
+   color: var(--accent-color);
+   padding: 5px;
 }
 
 /* Recommended reading section */

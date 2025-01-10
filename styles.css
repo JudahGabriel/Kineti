@@ -80,7 +80,7 @@ table {
    }
 
    tbody {
-      tr {
+      tr:not(:last-child) {
          td {
             border-bottom: 1px solid var(--table-border-color);
             padding: 10px;

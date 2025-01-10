@@ -1,5 +1,6 @@
 body {
    --accent-color: rgb(21, 84, 151); /* The dark blue of our blog */
+   --table-border-color: #ededed; /* light gray border */
 }
 
 .profile-img {
@@ -62,6 +63,30 @@ h3:not(.post-title) {
 #recommendedReadingContent li > :first-child {
    font-size: 1.3em;
    text-shadow: 1px 1px 2px silver;
+}
+
+table {
+   border: 1px solid var(--table-border-color);
+   padding: 20px;
+   border-radius: 0.375rem;
+
+   thead {
+      text-align: left;
+
+      th {
+         padding-bottom: 10px;
+         border-bottom: 1px solid var(--table-border-color);
+      }
+   }
+
+   tbody {
+      tr {
+         td {
+            border-bottom: 1px solid var(--table-border-color);
+            padding: 10px;
+         }
+      }
+   }
 }
 
 /* Mobile styles */

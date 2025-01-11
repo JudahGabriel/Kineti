@@ -170,13 +170,9 @@ table {
    }
 
    /* Make iframes and videos a bit larger on mobile */
-   iframe, video {
+   /* We don't apply this to twitter iframes because they have their own sizing logic in a script that conflicts with our styles */
+   iframe:not([data-tweet-id]), video {
       max-width: 120%;
       margin-left: -10%;
-   }
-
-   /* On mobile, embedded tweets should take up a bit more space as well */
-   .twitter-tweet {
-      width: 110%;
    }
 }

@@ -1,5 +1,6 @@
 body {
    --accent-color: rgb(21, 84, 151); /* The dark blue of our blog */
+   --title-brown: #461b0e;
    --table-border-color: #ededed; /* light gray border */
 }
 
@@ -33,6 +34,11 @@ h3:not(.post-title) {
    border-left: 4px solid navy;
    margin-left: -30px;
    margin-right: -30px;
+}
+
+h3.post-title a, 
+h3.post-title a:visited {
+   color: var(--title-brown);
 }
 
 .post-body {

@@ -132,9 +132,9 @@ table {
         padding-left: 0;
     }
 
-   /* Make the header, posts, and comments take up full viewport width (minus some for padding) */
+   /* Make the header, posts, and comments take up most of the viewport width */
    header, .main-outer, .comments {
-      width: 82vw;
+      width: 90vw;
    }
 
    /* images should be maxed at 100% width */
@@ -173,5 +173,10 @@ table {
    iframe, video {
       max-width: 120%;
       margin-left: -10%;
+   }
+
+   /* On mobile, embedded tweets should take up a bit more space as well */
+   .twitter-tweet {
+      width: 110%;
    }
 }

@@ -114,7 +114,7 @@ table {
 
    /* Post titles should be justified and a bit smaller with less top margin */
    h3.post-title {
-      text-align: justify;
+      text-align: left;
       font-size: 4em;
       margin-top: 10px;
    }

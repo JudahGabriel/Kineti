@@ -66,6 +66,13 @@ h3.post-title a:visited {
    padding-left: 3px;
 }
 
+/* quotes on mobile shouldn't have margin; we should take up the whole width */
+blockquote {
+   @media (max-width: 768px) {
+      margin: 0;
+   }
+}
+
 /* Recommended reading section */
 #recommendedReadingContent ul {
    list-style: none;

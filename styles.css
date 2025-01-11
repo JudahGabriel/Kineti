@@ -69,20 +69,36 @@ table {
    border: 1px solid var(--table-border-color);
    padding: 20px;
    border-radius: 0.375rem;
+   display: block;
+   max-width: fit-content;
+   overflow: auto;
+
+   /* On mobile, prevent the table text from wrapping, causing it to become horizontally scrollable.
+   @media (max-width: 768px) {
+      white-space: nowrap; 
+      overflow-x: scroll; /* always show scrollbar for table on mobile so that the user knows its scrollable, even if the don't interact with the table */
+   }
 
    thead {
       text-align: left;
 
       th {
          padding-bottom: 10px;
+         padding-left: 10px;
          border-bottom: 1px solid var(--table-border-color);
       }
    }
 
-   tbody {
+   tbody {   
       tr:not(:last-child) {
          td {
             border-bottom: 1px solid var(--table-border-color);
+            padding: 10px;
+         }
+      }
+
+      tr:last-child {
+         td {
             padding: 10px;
          }
       }
@@ -112,11 +128,15 @@ table {
       height: auto;
    }
 
-   /* Post titles should be justified and a bit smaller with less top margin */
+   /* Post titles should be justified on desktop (left on mobile) and a bit smaller with less top margin */
    h3.post-title {
-      text-align: left;
+      text-align: justify;
       font-size: 4em;
       margin-top: 10px;
+
+      @media (max-width: 768px) {
+         text-align: left;
+      }
    }
 
    /* the posts section doesn't need to have the top padding */

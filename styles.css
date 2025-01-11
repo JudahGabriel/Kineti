@@ -73,7 +73,7 @@ table {
    max-width: fit-content;
    overflow: auto;
 
-   /* On mobile, prevent the table text from wrapping, causing it to become horizontally scrollable.
+   /* On mobile, prevent the table text from wrapping, causing it to become horizontally scrollable. */
    @media (max-width: 768px) {
       white-space: nowrap; 
       overflow-x: scroll; /* always show scrollbar for table on mobile so that the user knows its scrollable, even if the don't interact with the table */

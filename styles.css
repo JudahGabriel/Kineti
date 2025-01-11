@@ -169,7 +169,9 @@ table {
       font-size: 3em;
    }
 
+   /* Make iframes and videos a bit larger on mobile */
    iframe, video {
-      max-width: 100%;
+      max-width: 120%;
+      margin-left: -10%;
    }
 }

@@ -71,6 +71,10 @@ blockquote {
    @media (max-width: 768px) {
       margin: 0;
    }
+
+   blockquote {
+      border-left: none;
+   }
 }
 
 /* Recommended reading section */

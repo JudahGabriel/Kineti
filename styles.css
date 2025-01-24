@@ -59,8 +59,8 @@ h3.post-title a:visited {
    /* initial-letter: 2; /* /* takes up 2 lines. Not yet widely supported as of late 2024, so we're going with older CSS solution https://css-tricks.com/snippets/css/drop-caps */
    color: var(--accent-color);
    float: left;
-   font-size: 75px;
-   line-height: 60px;
+   font-size: 55px;
+   line-height: 55px;
    padding-top: 4px;
    padding-right: 8px;
    padding-left: 3px;

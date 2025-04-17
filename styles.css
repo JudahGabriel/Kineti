@@ -91,6 +91,14 @@ blockquote {
    text-shadow: 1px 1px 2px silver;
 }
 
+/* Hide Disqus ads */
+.comments {
+   #disqus_recommendations,
+   #disqus_thread iframe[src*="tempest.services.disqus.com"] { 
+      max-height: 0;
+   }
+}
+
 /* Special formatting for tables embedded in posts. We do this for tables we manually insert into posts. 
  * We _don't_ want to apply these styles to images inserted into the post by Blogger editor, hence the :not selector.
 */

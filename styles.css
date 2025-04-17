@@ -96,6 +96,7 @@ blockquote {
    #disqus_recommendations,
    #disqus_thread iframe[src*="tempest.services.disqus.com"] { 
       max-height: 0;
+      opacity: 0;
    }
 }
 

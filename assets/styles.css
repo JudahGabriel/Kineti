@@ -1,3 +1,9 @@
+body {
+   --accent-color: rgb(21, 84, 151); /* The dark blue of our blog */
+   --title-brown: #461b0e;
+   --table-border-color: #ededed; /* light gray border */
+}
+
 .profile-img {
    float:right;
 }
@@ -10,8 +16,21 @@
    line-height: 12px;
 }
 
+.content-inner {
+   padding: 10px 40px;
+
+   /* On mobile, reduce the padding and display the content in the center */
+   @media (max-width: 768px) {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+}
+
 .post-body a {
    text-shadow: 1px 1px 2px silver;
+   text-rendering: optimizeLegibility;
 }
 
 h3:not(.post-title) {
@@ -30,8 +49,32 @@ h3:not(.post-title) {
    margin-right: -30px;
 }
 
-.post-body {
-   text-rendering: optimizeLegibility;
+h3.post-title a, 
+h3.post-title a:visited {
+   color: var(--title-brown);
+}
+
+/* The first letter of the first paragraph in the post body should be styled specially */
+.post-body > p:first-of-type::first-letter {
+   /* initial-letter: 2; /* /* takes up 2 lines. Not yet widely supported as of late 2024, so we're going with older CSS solution https://css-tricks.com/snippets/css/drop-caps */
+   color: var(--accent-color);
+   float: left;
+   font-size: 55px;
+   line-height: 55px;
+   padding-top: 4px;
+   padding-right: 8px;
+   padding-left: 3px;
+}
+
+/* quotes on mobile shouldn't have margin; we should take up the whole width */
+blockquote {
+   @media (max-width: 768px) {
+      margin: 0;
+   }
+
+   blockquote {
+      border-left: none;
+   }
 }
 
 /* Recommended reading section */
@@ -48,6 +91,111 @@ h3:not(.post-title) {
    text-shadow: 1px 1px 2px silver;
 }
 
+/* Hide Disqus ads */
+.comments {
+   #disqus_recommendations,
+   #disqus_thread iframe[src*="tempest.services.disqus.com"] { 
+      max-height: 0;
+      opacity: 0;
+   }
+}
+
+/* Special formatting for tables embedded in posts. We do this for tables we manually insert into posts. 
+ * We _don't_ want to apply these styles to images inserted into the post by Blogger editor, hence the :not selector.
+*/
+table:not(:has(img[data-original-width])) {
+   border: 1px solid var(--table-border-color);
+   padding: 20px;
+   border-radius: 0.375rem;
+   display: block;
+   max-width: fit-content;
+   overflow: auto;
+
+   /* On mobile, prevent the table text from wrapping, causing it to become horizontally scrollable. */
+   @media (max-width: 768px) {
+      white-space: nowrap; 
+      overflow-x: scroll; /* always show scrollbar for table on mobile so that the user knows its scrollable, even if the don't interact with the table */
+   }
+
+   thead {
+      text-align: left;
+
+      th {
+         padding-bottom: 10px;
+         padding-left: 10px;
+         border-bottom: 1px solid var(--table-border-color);
+      }
+   }
+
+   tbody {   
+      tr:not(:last-child) {
+         td {
+            border-bottom: 1px solid var(--table-border-color);
+            padding: 10px;
+         }
+      }
+
+      tr:last-child {
+         td {
+            padding: 10px;
+         }
+      }
+   }
+}
+
+/* Image gallery for laying out images in adaptive layout, courtesy of https://css-tricks.com/adaptive-photo-layout-with-flexbox/ */
+ul.img-gallery {
+   display: flex;
+   flex-wrap: wrap;
+   
+   li {
+     height: 40vh;
+     flex-grow: 1;
+   }
+   
+   li:last-child {
+     /* There's no science in using "10" here. In all my testing, this delivered the best results. */
+     flex-grow: 10;
+   }
+   
+   img {
+     max-height: 100%;
+     min-width: 100%;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+   
+   @media (max-aspect-ratio: 1/1) {
+     li {
+       height: 30vh;
+     }
+   }
+   
+   /* Short screens */
+   @media (max-height: 480px) {
+     li {
+       height: 80vh;
+     }
+   }
+   
+   /* Smaller screens in portrait */
+   @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+     ul {
+       flex-direction: row;
+     }
+   
+     li {
+       height: auto;
+       width: 100%;
+     }
+     img {
+       width: 100%;
+       max-height: 75vh;
+       min-width: 0;
+     }
+   }
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     /* hide the sidebar */
@@ -60,9 +208,9 @@ h3:not(.post-title) {
         padding-left: 0;
     }
 
-   /* Make the header, posts, and comments take up full viewport width (minus some for padding) */
+   /* Make the header, posts, and comments take up most of the viewport width */
    header, .main-outer, .comments {
-      width: 82vw;
+      width: 90vw;
    }
 
    /* images should be maxed at 100% width */
@@ -71,11 +219,15 @@ h3:not(.post-title) {
       height: auto;
    }
 
-   /* Post titles should be justified and a bit smaller with less top margin */
+   /* Post titles should be justified on desktop (left on mobile) and a bit smaller with less top margin */
    h3.post-title {
       text-align: justify;
       font-size: 4em;
       margin-top: 10px;
+
+      @media (max-width: 768px) {
+         text-align: left;
+      }
    }
 
    /* the posts section doesn't need to have the top padding */
@@ -93,7 +245,10 @@ h3:not(.post-title) {
       font-size: 3em;
    }
 
-   iframe, video {
-      max-width: 100%;
+   /* Make iframes and videos a bit larger on mobile */
+   /* We don't apply this to twitter iframes because they have their own sizing logic in a script that conflicts with our styles */
+   iframe:not([data-tweet-id]), video {
+      max-width: 120%;
+      margin-left: -10%;
    }
 }

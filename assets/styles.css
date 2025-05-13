@@ -92,12 +92,10 @@ blockquote {
 }
 
 /* Hide Disqus ads */
-.comments {
-   #disqus_recommendations,
-   #disqus_thread iframe[src*="tempest.services.disqus.com"] { 
-      max-height: 0;
-      opacity: 0;
-   }
+#disqus_recommendations,
+#disqus_thread iframe[src*="tempest.services.disqus.com"] { 
+   max-height: 0;
+   opacity: 0;
 }
 
 /* Special formatting for tables embedded in posts. We do this for tables we manually insert into posts. 
